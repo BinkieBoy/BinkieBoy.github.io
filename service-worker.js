@@ -21,8 +21,13 @@ self.addEventListener('install', e => {
 
 });    
 
-self.addEventListener('fetch', (ev) => {
-	ev.respondWith(
+self.addEventListener('activate', e => {
+	console.log('Service worker is nu actief');
+});
+
+
+self.addEventListener('fetch', e => {
+	e.respondWith(
 	
 		// Deze functie wilt een Promise; 
 		// 'async function(){..}() wordt door JavaScript 
@@ -33,9 +38,9 @@ self.addEventListener('fetch', (ev) => {
 			console.log(`Request onderschept met data: `);
 			console.dir(ev.request);
 			
-			if (ev.request.url.indexOf('bgg')>-1){
+			if (e.request.url.indexOf('bgg')>-1){
 			
-				let oudRequest = ev.request;
+				let oudRequest = e.request;
 				let nieuweURL = oudRequest.url.replace('edwalter','stinow');
 			
 				let nieuwRequest = new Request(
@@ -50,7 +55,7 @@ self.addEventListener('fetch', (ev) => {
 			
 				return fetch(nieuwRequest); //Hier wordt een Promise verwacht
 			} else {
-				return fetch(ev.request);
+				return fetch(e.request);
 			}
 		}()
 	);
