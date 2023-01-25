@@ -1,0 +1,17 @@
+{
+  "name": "PWA",
+  "short_name": "PWA",
+  "theme_color": "#2196f3",
+  "background_color": "#2196f3",
+  "display": "browser",
+  "orientation": "landscape",
+  "scope": "/index.html",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "donut.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }
+  ]
+}
