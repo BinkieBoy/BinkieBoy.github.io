@@ -34,7 +34,7 @@ self.addEventListener('fetch', e => {
 		async function() {
 	
 			console.log(`Request onderschept met data: `);
-			console.dir(ev.request);
+			console.dir(e.request);
 			
 			if (e.request.url.indexOf('bgg')>-1){
 			
