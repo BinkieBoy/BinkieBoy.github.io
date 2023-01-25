@@ -3,7 +3,6 @@ var cacheName = 'v1.0';
 
 var cacheAssets = [
     'index.html',
-    'about.html',
     '/js/main.js',
 ]
 
